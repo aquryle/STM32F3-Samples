@@ -60,8 +60,8 @@ all: main-build
 main-build: STM32F3-Samples.elf secondary-outputs
 
 # Tool invocations
-STM32F3-Samples.elf STM32F3-Samples.map: $(OBJS) $(USER_OBJS) C:\Users\sata\develop\STM32F3\STM32F3-Samples\STM32F303K8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "STM32F3-Samples.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\sata\develop\STM32F3\STM32F3-Samples\STM32F303K8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F3-Samples.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+STM32F3-Samples.elf STM32F3-Samples.map: $(OBJS) $(USER_OBJS) /Users/sata/develop/STM32F3-Samples/STM32F303K8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "STM32F3-Samples.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/Users/sata/develop/STM32F3-Samples/STM32F303K8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F3-Samples.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

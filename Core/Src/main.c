@@ -85,6 +85,7 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  GPIOA->ODR = 0x0002;
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
